@@ -1,0 +1,76 @@
+{
+	"apiVersion": 2,
+	"name": "fourmi-e/table-articles",
+	"version": "0.1.0",
+	"title": "Fourmie Table Articles",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "fourmie-table-articles",
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": null
+		},
+		"actualPostType": {
+			"type": "string",
+			"default": "Article"
+		},
+		"queryId": {
+			"type": "number"
+		},
+		"query": {
+			"type": "object",
+			"default": {
+				"perPage": -1,
+				"pages": 0,
+				"offset": 0,
+				"postType": "post",
+				"categoryIds": [],
+				"tagIds": [],
+				"order": "desc",
+				"orderBy": "date",
+				"author": "",
+				"search": "",
+				"exclude": [],
+				"sticky": "",
+				"inherit": true
+			}
+		},
+		"queryResult": {
+			"type": "object"
+		},
+		"displayOptions": {
+			"type": "object",
+			"default": {
+				"table": {
+					"date": true,
+					"etiquette": true,
+					"more": true,
+					"allResult": true
+				},
+				"colorTheme": "indigo"
+			}
+		},
+		"lirePlus": {
+			"type": "object",
+			"default": {
+				"level": "moyen",
+				"text": "lire la suite",
+				"colonnage_withStart": false,
+				"colonnage_withResponsive": true,
+				"colonnage_simple": 24,
+				"colonnage_medium_checked": true,
+				"colonnage_medium": 8,
+				"colonnage_medium_start": 1,
+				"backgroundColorClass": "bg-indigo-dark"
+			}
+		}
+	},
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

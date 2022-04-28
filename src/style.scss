@@ -1,0 +1,332 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@import './_variables';
+
+.wp-block-fourmi-e-table-articles {
+	// background-color: #21759b;
+	// color: #fff;
+	@include manageWidthContent;
+
+	// width: calc(100% - #{$grandGauche});
+	display: grid;
+	grid-template-columns: repeat(24, 1fr);
+	gap: 0;
+	// padding-left: $grandGauche;
+	align-items: end;
+
+	.conteneur {
+		align-self: flex-start;
+		// background-color: rgba(0,0,0,.25);
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		height: calc(100% - 40px);
+		min-width: calc(100% - 60px);
+		padding: 20px 40px 20px 20px;
+		position: relative;
+
+	}
+
+	table {
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+		//font-size: 1.6rem;
+		font-size: 1.45rem;
+		line-height: 1.3em;
+		table-layout: fixed;
+
+		@media (min-width: map-get($breakpoints, sm)){
+			font-size: 1.6rem;
+		}
+		@media (min-width: map-get($breakpoints, md)){
+			font-size: 1.7rem;
+		}
+		@media (min-width: map-get($breakpoints, lg)){
+			font-size: 1.5rem;
+		}
+		@media (min-width: map-get($breakpoints, xl)){
+			font-size: 1.6rem;
+		}
+		@media (min-width: map-get($breakpoints, xl)){
+			font-size: 1.85rem;
+		}
+
+		thead {
+			/* XS */
+			display: none;
+			@media (min-width: map-get($breakpoints, lg)){
+				display: table-header-group;
+			}
+			tr {
+				border-bottom: solid currentColor 2px;
+
+				th {
+					text-align: left;
+					font-family: 'Inter', sans-serif;
+					//font-size: 1.5rem;
+					font-size: .85em;
+					font-weight: normal;
+					color: inherit;
+					padding: .25rem .5rem;
+				}
+			}
+		}
+
+		.head-post- {
+			&type {
+				width: 40%;
+				max-width: 100%;
+				min-width: 25%;
+			}
+
+			&date {
+				width: 25%;
+				max-width: 100%;
+				min-width: 20%;
+			}
+
+			&tags {
+				width: 30%;
+				max-width: 100%;
+				min-width: 25%;
+			}
+		}
+
+		tbody {
+			tr {
+				border-bottom: solid currentColor 1px;
+				hyphens: manual;
+
+				&:hover {
+					// background-color: aqua;
+					background-color: rgba($color: #000000, $alpha: .25);
+				}
+
+				td {
+					vertical-align: baseline;
+					position: relative;
+					height: 100%;
+					height: inherit;
+
+					&.data-post- {
+						&title {
+							/* XS */
+							width: 100%;
+							float: left;
+							@media (min-width: map-get($breakpoints, lg)){
+								width: auto;
+								float: none;
+							}
+						}
+
+						&date {
+							/* XS */
+
+							width: 40%;
+							float: left;
+							@media (min-width: map-get($breakpoints, lg)){
+								width: auto;
+								float: none;
+							}
+							/* --- */
+							font-size: .65em;
+							font-style: italic;
+						}
+
+						&tags {
+							/* XS */
+							width: 58%;
+							float: left;
+							@media (min-width: map-get($breakpoints, lg)){
+								width: auto;
+								float: none;
+							}
+							/* --- */
+							font-size: .8em;
+							//line-height: 1.25em;
+
+						}
+					}
+
+					a {
+						// position: absolute;
+						bottom: 0;
+						top: 0;
+						display: block;
+						width: 100%;
+						width: calc(100% - 1rem);
+						height: 100%;
+						padding: .25rem .5rem;
+						color: currentColor;
+						text-decoration: none;
+						font-family: 'American Typewriter', serif;
+					}
+				}
+			}
+		}
+
+	}
+
+	.table-img-wrap {
+		width: calc(100% + 60px);
+		height: calc(100% + 40px);
+		margin: 0;
+		padding: 0;
+		position: relative;
+
+		min-height: 25vh;
+
+		margin: -20px -40px -20px -20px;
+
+		figure {
+
+			position: absolute;
+			// height: auto;
+			// width: auto;
+			// max-height: 100%;
+			// max-width: 100%;
+
+			display: block;
+			width: 100%;
+			height: 100%;
+
+			margin: 0;
+			padding: 0;
+
+			z-index: 0;
+			opacity: 0;
+			transition: opacity .33s ease;
+
+			&.show {
+				z-index: 10;
+				opacity: 1;
+			}
+
+			img {
+				display: block;
+				height: 100%;
+				max-height: 100%;
+				max-width: 100%;
+				position: relative;
+				width: auto;
+				object-fit: scale-down;
+				object-position: top;
+			}
+		}
+
+	}
+
+	.pagination {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		// text-align: right;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(1rem, 1.6rem));
+		grid-template-rows: 3rem;
+		justify-content: end;
+
+		// padding: 20px 40px 20px 20px;
+		margin: -20px 0;
+
+
+		li {
+			display: inline-block;
+			font-size: 1.15rem;
+			&:hover {
+				background-color: aquamarine;
+			}
+
+			background-color: transparent;
+			a, .current {
+				color: currentColor;
+				text-decoration: none;
+				text-align: center;
+				display: block;
+				width: 100%;
+				height: 55%;
+				padding: 45% 0 0;
+			}
+
+			a {
+
+
+			}
+
+			.current {
+				// color: currentColor;
+				// text-align: center;
+				// display: block;
+				// width: 100%;
+				// height: 100%;
+				opacity: .65;
+
+				&:hover {
+					background-color: transparent;
+					cursor: not-allowed;
+				}
+			}
+
+			&.moins,
+			&.plus {
+				font-size: 2rem;
+				//margin-top: -0.08rem;
+				padding-top: 40%;
+				text-align: center;
+				opacity: 1;
+				visibility: visible;
+				transition: opacity .33s, visibility .33s;
+
+				&:hover {
+					cursor: pointer;
+					background-color: aquamarine;
+				}
+
+				&.hide {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+
+	&.table-theme {
+		&-turquoise {
+			tbody {
+				tr {
+					&:hover {
+						background-color: $turquoise-hightlight;
+					}
+
+				}
+			}
+		}
+
+		&-indigo {
+			tbody {
+				tr {
+					&:hover {
+						background-color: $indigo-hightlight;
+					}
+
+				}
+			}
+		}
+
+		&-corail {
+			tbody {
+				tr {
+					&:hover {
+						background-color: $corail-hightlight;
+					}
+				}
+			}
+		}
+	}
+}

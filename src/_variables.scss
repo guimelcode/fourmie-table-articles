@@ -1,0 +1,69 @@
+/* Break points */
+$breakpoints: (xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px);
+
+/* Marges de segment */
+$contentPadding: (baseLeft: 4%,
+	baseRight: 0%,
+	mediumLeft: 2%,
+	mediumRight: 0%,
+	extralargeLeft: 4%,
+	extralargeRight: 2%,
+	doubleextralargeLeft: 5%,
+	doubleextralargeRight: 3%,
+	superlargeLeft: 10%,
+	superlargeRight: 5%,
+);
+
+@mixin manageWidthContent {
+	width: calc(100% - #{map-get($contentPadding, baseLeft)} - #{map-get($contentPadding, baseRight)});
+	padding-left: map-get($contentPadding, baseLeft);
+	padding-right: map-get($contentPadding, baseRight);
+
+	@media (min-width: map-get($breakpoints, md)) {
+		width: calc(100% - #{map-get($contentPadding, mediumLeft)} - #{map-get($contentPadding, mediumRight)});
+		padding-left: map-get($contentPadding, mediumLeft);
+		padding-right: map-get($contentPadding, mediumRight);
+	}
+	@media (min-width: map-get($breakpoints, xl)) {
+		width: calc(100% - #{map-get($contentPadding, extralargeLeft)} - #{map-get($contentPadding, extralargeRight)});
+		padding-left: map-get($contentPadding, extralargeLeft);
+		padding-right: map-get($contentPadding, extralargeRight);
+	}
+	@media (min-width: map-get($breakpoints, xxl)) {
+		width: calc(100% - #{map-get($contentPadding, doubleextralargeLeft)} - #{map-get($contentPadding, doubleextralargeRight)});
+		padding-left: map-get($contentPadding, doubleextralargeLeft);
+		padding-right: map-get($contentPadding, doubleextralargeRight);
+	}
+	@media (min-width: "2100px") {
+		width: calc(100% - #{map-get($contentPadding, superlargeLeft)} - #{map-get($contentPadding, superlargeRight)});
+		padding-left: map-get($contentPadding, superlargeLeft);
+		padding-right: map-get($contentPadding, superlargeRight);
+	}
+}
+
+
+/* TURQUOISE */
+$turquoise-base: #2BE7B4;
+$turquoise-hightlight: #7CFEDA;
+$turquoise-light: #EFFDF9;
+$turquoise-dark: #004C37;
+$turquoise-darker: #022C20;
+
+/* INDIGO */
+$indigo-base: #5025ED;
+$indigo-hightlight: #C4B3FF;
+$indigo-light: #F1EEFE;
+$indigo-dark: #2C1A72;
+$indigo-darker: #130D2E;
+
+/* CORAIL */
+$corail-base: #FF4A22;
+$corail-hightlight: #FF957C;
+$corail-light: #FFF1EE;
+$corail-dark: #8D1A02;
+$corail-darker: #3D1008;

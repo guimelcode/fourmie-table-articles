@@ -1,0 +1,27 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ @import './variables';
+
+.wp-block-fourmi-e-table-articles {
+
+}
+.editor-styles-wrapper .wp-block-fourmi-e-table-articles {
+	// same as Segment
+	margin: 0;
+    max-width: initial;
+    box-sizing: initial;
+    // display: block;
+    // width: 100%;
+    // padding-left: 0;
+	@include manageWidthContent;
+
+	// width: calc(100% - #{$grandGauche});
+	display: grid;
+	grid-template-columns: repeat(24, 1fr);
+	gap: 0;
+	// padding-left: $grandGauche;
+}
